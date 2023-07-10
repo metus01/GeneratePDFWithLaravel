@@ -1,5 +1,7 @@
 <?php
 
+use Barryvdh\DomPDF\ServiceProvider;
+
 /*
 |--------------------------------------------------------------------------
 | Create The Application
@@ -40,6 +42,12 @@ $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
     App\Exceptions\Handler::class
 );
+
+$app->register(ServiceProvider::class);
+
+$app->configure('dompdf');
+
+
 
 /*
 |--------------------------------------------------------------------------
